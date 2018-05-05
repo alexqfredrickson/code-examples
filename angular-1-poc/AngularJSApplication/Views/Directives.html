@@ -1,0 +1,53 @@
+<div class="sectionContainer" ng-controller="DirectiveCtrl">
+
+    <aside>
+        <h2 ng-style="{'color': titleColor}">Directives</h2>
+        <p>Roughly speaking, directives are used to create custom HTML web components (vis. creating domain-specific languages for web applications), and are expressed on the View through custom elements, attributes, and classes.</p>
+    </aside>
+
+    <hr />
+    
+    <aside>
+        <div class="row">
+        
+            <div class="col-xs-11">
+                <span>Clicking the icon to the right will allow a custom directive called <div class="custom-pre">toggleIcon</div> to interact with the controller scope, in such a way that the header's color will change.</span>
+            </div>
+        
+            <div class="col-xs-1" style="text-align: center;">
+                <i toggle-icon style="cursor: pointer;"></i>
+            </div>
+        
+        </div>
+        
+        <hr />
+        
+        <div class="row">
+        
+            <div class="col-xs-1" style="text-align: center;">
+                <i class="fa fa-3x fa-exclamation"></i>
+            </div>
+            
+            <div class="col-xs-11">
+                <span>The <div class="custom-pre">toggleIcon</div> directive looks like this:</span>
+                <pre style="margin-top: 1em">
+app.directive('toggleIcon', function () {
+    return {
+        restrict: 'EA',
+        scope: false,
+        link: function (scope, element, attrs) {
+            element.bind('click', function () {
+                // do things with controller scope, the element, and its attributes
+            });
+        },
+        template: '&lt;i ng-style="{\'color\': titleColor}" class="fa fa-toggle-off fa-3x">&lt;/i>',
+        replace: true
+    }
+});</pre>
+            </div>
+            
+        </div>
+        
+    </aside>
+
+</div>

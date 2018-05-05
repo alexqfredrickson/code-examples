@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Simple AngularJS Application</title>
+    <base href="/"></base>
+    
+    <!--Google Fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    
+    <!--Less-->
+    <link href="styles.less" rel="stylesheet/less" type="text/css"  />
+    <script src="less.js"></script>
+    
+    <!--FontAwesome.css-->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    
+    <!--Normalize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.2/normalize.min.css" />
+    
+    <!--AngularJs-->
+    <script src="angular.js"></script>
+    <script src="angular-route.js"></script>
+    
+    <!--Bootstrap-->
+    <link href="bootstrap.css" rel="stylesheet" />
+
+    <!--Main.js-->
+    <script src="modules.js"></script>
+    <script src="routes.js"></script>
+    <script src="controllers.js"></script>
+    <script src="directives.js"></script>
+</head>
+
+<body ng-app="angularTestApp" class="container-fluid">
+
+    <header class="row">
+        
+        <div id="headerWrapper" class="col-xs-12">
+            <div id="headerWrapperCell">
+                <h1>AngularJS Framework Examples</h1>
+            </div>
+        </div>
+        
+    </header>
+
+    <div class="row" ng-controller="NavCtrl">
+
+        <nav class="col-xs-2">
+            <a href="/api">External APIs</a>
+            <a href="/forms">Forms</a>
+            <a href="/directives">Directives</a>
+        </nav>
+
+        <article class="col-xs-10">
+            <section ng-view></section>
+        </article>
+        
+    </div>
+
+</body>
+
+</html>

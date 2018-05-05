@@ -1,0 +1,24 @@
+{
+  "name": "AngularJSTest",
+  "version": "1.0.0",
+  "description": "a test angular js app",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.12.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alexqfredrickson/AngularJSTest.git"
+  },
+  "author": "a.f.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexqfredrickson/AngularJSTest/issues"
+  },
+  "homepage": "https://github.com/alexqfredrickson/AngularJSTest"
+}

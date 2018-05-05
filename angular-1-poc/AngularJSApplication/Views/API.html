@@ -1,0 +1,55 @@
+<div class="sectionContainer" ng-controller="ApiCtrl">
+
+    <h2 style="margin-bottom: 0;">Accessing External APIs</h2>
+    
+    <aside>    
+        <h3>This section shows off three AngularJS features:</h3>
+        <ul>
+            <li><em>The $http service</em>
+                <p>This asynchronously retrieves JSON data from an external API (i.e. a web service called Dbpedia).</p>
+            </li>
+            <li><em>Expressions</em> 
+                <p>These are used in this example to enhance the user interface by toggling the display of various HTML elements depending on $scope factors.</p>
+            </li>
+               
+            <li><em>Two-way binding to a model</em></li>
+        </ul>
+    </aside>
+
+    <hr />
+
+    <div class="row">
+        <div class="col-xs-5">
+            <form ng-submit="queryDbPedia()">
+                <div class="form-group">
+                    <label for="query" style="display: block">Search Dbpedia by keyword: </label>
+                    <input name="query" type="text" ng-model="query" class="form-control" />
+                    <input class="btn btn-primary btn-small" type="submit" style="margin-top: 10px; margin-bottom: 15px; float: right;" />
+                </div>
+            </form>
+        </div>
+
+        <div class="col-xs-7" ng-show="query != '' && !queryInProgress">
+            <div class="infoBubble">
+                <p>Submitting the form will result in a GET request to the Dbpedia API, which returns archived Wikipedia articles connected to the keyword: "<strong>{{query}}</strong>".</p>
+                <p>Two-way binding allows ng-model to update in real-time based on the value of the input box.</p>
+            </div>
+        </div>
+
+        <div class="col-xs-7" ng-show="queryInProgress">
+            <div class="infoBubble">
+                <div>Loading results...</div>
+            </div>
+        </div>
+
+        <div class="col-xs-12" ng-show="query == '' && jsonResult.length != 0">
+            <aside ng-show="jsonResult.length != 0" id="jsonResults">
+                <div class="infoBubble wikiResult" ng-repeat="item in jsonResult">{{item.label}}</div>
+                <!--
+                                <h3>Description:</h5>
+                                <p>{{item.description}}</p>
+            -->
+            </aside>
+        </div>
+    </div>
+</div>

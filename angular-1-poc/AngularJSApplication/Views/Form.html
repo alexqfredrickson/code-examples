@@ -1,0 +1,59 @@
+<div class="sectionContainer" ng-controller="FormCtrl">
+    <h2>Forms</h2>
+
+    <aside>
+        <p>This section demonstrates how a simple form works in AngularJS.</p>
+    </aside>
+
+    <hr />
+
+    <div class="row">
+
+        <div class="col-xs-12">
+            <form name="exampleForm" ng-submit="submitForm(newForm)">
+                <div class="form-group">
+                    <label>What's your name?</label>
+                    <input name="name" placeholder="Jane Doe" type="text" class="form-control" ng-model="newForm.name" required />
+                </div>
+
+                <div class="form-group">
+                    <label>How old are you?</label>
+                    <input name="age" placeholder="25" type="number" class="form-control" ng-model="newForm.age" required />
+                </div>
+
+                <div class="form-group">
+                    <label>Do you have any pets?</label>
+                    <select class="form-control" name="hasPets" ng-model="newForm.hasPets">
+                        <option selected="selected">No</option>
+                        <option>Yes</option>
+                    </select>
+                </div>
+
+                <input class="btn btn-primary btn-small" type="submit" value="Submit" style="margin-top: 10px; margin-bottom: 15px; float: right;" />
+            </form>
+        </div>
+
+        <div class="col-xs-12" ng-show='formData.length > 0'>
+            <div class="col-xs-3" ng-repeat="datum in formData">
+                <div class="formDatum">
+                    <p>Name: {{datum.name}}</p>
+                    <p>Age: {{datum.age}}</p>
+                    <p>Has pets?: {{datum.hasPets == true ? "Yep" : "Nope"}}</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row" ng-show="formData.length > 0">
+
+        <hr />
+
+        <div class="col-xs-12">
+            <p>This is what the form data looks like as a JSON-formatted string:</p>
+            <pre>{{formToJson}}</pre>
+        </div>
+
+    </div>
+
+</div>

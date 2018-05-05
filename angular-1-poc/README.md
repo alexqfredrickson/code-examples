@@ -1,0 +1,1 @@
+This is an example Angular 1 web application which I spun up to learn about the MEAN stack.  The application is served via ExpressJS and contains some basic Angular 1 functionality which contacts a third-party web service and displays content. 
