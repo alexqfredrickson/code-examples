@@ -1,0 +1,14 @@
+{
+  "name": "address-book-poc",
+  "version": "1.0.0",
+  "description": "an asp.net core 2.2 POC",
+  "main": "./wwwroot/js/npm.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "alex",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "less": "^3.9.0"
+  }
+}

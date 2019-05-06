@@ -1,0 +1,14 @@
+html,
+body {
+  background-color: #6F4351;
+}
+.container {
+  padding: 2em;
+  margin: 2em auto;
+  background-color: #3F292C;
+  color: #F3DEAD;
+}
+li,
+code {
+  padding: 10px 0px;
+}

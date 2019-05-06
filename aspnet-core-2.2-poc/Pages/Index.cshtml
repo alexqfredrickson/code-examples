@@ -1,0 +1,47 @@
+﻿@page
+@model IndexModel
+
+@{
+    ViewData["Title"] = "Address Book";
+}
+
+<h1>ASP.NET Core 2.2 POC</h1>
+
+<p>
+	Welcome to my ASP.NET Core 2.2 proof-of-concept!  This is intended to be a simple CRUD application which functions like an address book.
+</p>
+
+<h2>
+	Installation
+</h2>
+
+<div class="alert alert-warning" role="alert">
+	<em>Note: the following instructions assume installation on a Linux Mint (or otherwise Ubuntu 18.04-compatible) environment.</em>
+</div>
+
+<ol>
+	<li>
+		Install the .NET Core 2.2.4 SDK:<br/>
+
+		<code>
+		wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb<br/>
+		sudo dpkg -i packages-microsoft-prod.deb<br/>
+		sudo add-apt-repository universe<br/>
+		sudo apt-get install apt-transport-https<br/>
+		sudo apt-get update<br/>
+		sudo apt-get install dotnet-sdk-2.2<br/>
+		</code>
+
+		<div class="alert alert-warning" role="alert">
+			<em>Note: <code>libicu60</code> may need to be manually installed as a workaround.</em>
+		</div>
+	</li>
+
+	<li>
+		Install Node package manager using <code>apt</code>, and <code>npm install</code> the project's dependencies.
+	</li>
+	
+	<li>
+		<code>cd</code> to the project directory and build/run the application using <code>dotnet run -v n</code> (the <code>-v n</code> argument will invoke normal verbosity - this provides some insight into the custom build procedures which compile *.less files).
+	</li>
+</ol>
