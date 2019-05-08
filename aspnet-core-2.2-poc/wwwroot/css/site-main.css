@@ -1,14 +1,23 @@
-html,
 body {
-  background-color: #6F4351;
+  margin: 8px;
 }
 .container {
-  padding: 2em;
-  margin: 2em auto;
-  background-color: #3F292C;
-  color: #F3DEAD;
+  width: 85% !important;
+  max-width: 85% !important;
 }
-li,
-code {
-  padding: 10px 0px;
+article {
+  background-color: #f6f6ef;
+  color: #828282;
+}
+article header {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 10pt;
+  color: black;
+  width: 100%;
+  background-color: #ff6600;
+  padding: 2px;
+  font-weight: bold;
+}
+article header p {
+  margin: 0 !important;
 }

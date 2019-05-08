@@ -1,20 +1,29 @@
-@beige: #F3DEAD;
-@sky-blue: #C4D5D1;
-@blue: #668CB2;
-@mauve: #6F4351;
-@violet: #3F292C;
+@import "site-mixins.less";
 
-html, body {
-	background-color: @mauve;
+body {
+	margin: 8px;
 }
 
 .container {
-	padding: 2em;
-	margin: 2em auto;
-	background-color: @violet;
-	color: @beige;
+	width: 85% !important;
+	max-width: 85% !important;
 }
 
-li, code {
-	padding: 10px 0px;
+article {
+	background-color: @light-grey;
+	color: @dark-grey;
+
+	header {
+		.verdana();
+
+		color: black;
+		width: 100%;
+		background-color: @orange;
+		padding: 2px;
+		font-weight: bold;
+
+		p {
+			margin: 0 !important;
+		}
+	}
 }
