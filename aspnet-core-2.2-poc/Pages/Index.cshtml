@@ -11,7 +11,25 @@
 	</header>
 
 	<div class="articles">
-		test
+		<div class="article" v-for="article in articles" v-cloak>
+			<div class="article-list-id">{{ article.list_id }}.</div>
+
+			<div class="article-title">
+		    	<a v-bind:href="article.url">
+		    		{{ article.title }}
+		    	</a>
+		    </div>
+			
+			<div class="article-link">
+		    	<a v-bind:href="article.url">
+		    		({{ article.hostname }})
+		    	</a>
+	    	</div>
+
+	    	<div class="article-points">{{ article.points }} points</div>
+
+	    	<div class="article-time-created">{{ article.time_created }}</div>
+		</div>
 	</div>
 </article>
 

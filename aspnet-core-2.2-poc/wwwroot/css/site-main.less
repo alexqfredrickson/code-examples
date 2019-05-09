@@ -9,9 +9,12 @@ body {
 	max-width: 85% !important;
 }
 
+// hide vue elements until loaded
+[v-cloak] {
+ 	display: none;
+}
+
 article {
-	background-color: @light-grey;
-	color: @dark-grey;
 
 	header {
 		.verdana();
@@ -24,6 +27,61 @@ article {
 
 		p {
 			margin: 0 !important;
+		}
+	}
+
+	.articles {
+
+		background-color: @light-grey;
+		float: left;
+		width: 100%;
+		padding: 5px;
+
+		.article {
+			padding: 5px 0px;
+
+			.article-list-id {
+				float: left;
+				margin-right: 5px;
+				.verdana(13.3333px, @dark-grey);
+			}
+
+			.article-title {
+				float: left;
+				margin-right: 5px;
+
+				a {
+					float: left;
+					.verdana(13.3333px, black);
+				}
+			}
+
+			.article-link {
+				float: left;
+				.verdana(10.66667px, @dark-grey);
+
+				a {
+					float: left;
+					.verdana(10.66667px, @dark-grey);
+					
+					// fallout from dealing with floats - yuck
+					position: relative; 
+					top: 3px;
+				}
+			}
+
+			.article-points {
+				float: left;
+				clear: left;	
+				.verdana(10.66667px, @dark-grey);
+				margin-right: 5px;
+				margin-left: 17px;
+			}
+
+			.article-time-created {
+				float: left;
+				.verdana(10.66667px, @dark-grey);
+			}
 		}
 	}
 }

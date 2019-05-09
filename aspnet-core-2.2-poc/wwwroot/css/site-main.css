@@ -5,9 +5,8 @@ body {
   width: 85% !important;
   max-width: 85% !important;
 }
-article {
-  background-color: #f6f6ef;
-  color: #828282;
+[v-cloak] {
+  display: none;
 }
 article header {
   font-family: Verdana, Geneva, sans-serif;
@@ -20,4 +19,59 @@ article header {
 }
 article header p {
   margin: 0 !important;
+}
+article .articles {
+  background-color: #f6f6ef;
+  float: left;
+  width: 100%;
+  padding: 5px;
+}
+article .articles .article {
+  padding: 5px 0px;
+}
+article .articles .article .article-list-id {
+  float: left;
+  margin-right: 5px;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 13.3333px;
+  color: #828282;
+}
+article .articles .article .article-title {
+  float: left;
+  margin-right: 5px;
+}
+article .articles .article .article-title a {
+  float: left;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 13.3333px;
+  color: black;
+}
+article .articles .article .article-link {
+  float: left;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 10.66667px;
+  color: #828282;
+}
+article .articles .article .article-link a {
+  float: left;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 10.66667px;
+  color: #828282;
+  position: relative;
+  top: 3px;
+}
+article .articles .article .article-points {
+  float: left;
+  clear: left;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 10.66667px;
+  color: #828282;
+  margin-right: 5px;
+  margin-left: 17px;
+}
+article .articles .article .article-time-created {
+  float: left;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 10.66667px;
+  color: #828282;
 }
