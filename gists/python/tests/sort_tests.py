@@ -1,13 +1,13 @@
 import random
 import unittest
-from .. import quicksort, mergesort, selectionsort, bubblesort
+from .. import quicksort, mergesort, selectionsort, bubblesort, insertionsort
 
 
 class SortTests(unittest.TestCase):
 
     @staticmethod
     def set_up_unit_test():
-        sorted_list = list(range(0, 10000))
+        sorted_list = list(range(0, 1000))
         shuffled_list = sorted_list.copy()
         random.shuffle(shuffled_list)
 
@@ -55,3 +55,9 @@ class SortTests(unittest.TestCase):
         sorted_list, shuffled_list = SortTests.set_up_unit_test()
         shuffled_list = bubblesort.bubblesort(shuffled_list)
         SortTests.tear_down_unit_test("Bubblesort", sorted_list, shuffled_list)
+
+    @staticmethod
+    def test_insertionsort():
+        sorted_list, shuffled_list = SortTests.set_up_unit_test()
+        shuffled_list = insertionsort.insertionsort(shuffled_list)
+        SortTests.tear_down_unit_test("Insertionsort", sorted_list, shuffled_list)
