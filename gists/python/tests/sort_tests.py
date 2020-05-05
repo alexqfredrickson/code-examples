@@ -1,37 +1,57 @@
 import random
 import unittest
-from .. import quicksort, mergesort
+from .. import quicksort, mergesort, selectionsort, bubblesort
 
 
 class SortTests(unittest.TestCase):
 
-    def setUp(self):
-        self.sorted_list = list(range(0, 10000))
-        self.shuffled_list = self.sorted_list.copy()
-        random.shuffle(self.shuffled_list)
+    @staticmethod
+    def set_up_unit_test():
+        sorted_list = list(range(0, 10000))
+        shuffled_list = sorted_list.copy()
+        random.shuffle(shuffled_list)
 
-    def tearDown(self):
-        print("{} {}.".format(
-            self.sort_algorithm_name,
-            "failed" if self.sorted_list != self.shuffled_list else "succeeded")
+        return sorted_list, shuffled_list
+
+    @staticmethod
+    def tear_down_unit_test(sort_algorithm_name, sorted_list, shuffled_list):
+        print("{} {}.  Here's the resulting array:".format(
+            sort_algorithm_name,
+            "failed" if sorted_list != shuffled_list else "succeeded")
         )
 
-        print("Here's the resulting array:")
-
-        if len(self.shuffled_list) < 50:
-            print(", ".join([str(s) for s in self.shuffled_list]))
+        if len(shuffled_list) < 50:
+            print(", ".join([str(s) for s in shuffled_list]))
         else:
             print(
-                ", ".join([str(s) for s in self.shuffled_list[0:20]]) + " ... " +
+                ", ".join([str(s) for s in shuffled_list[0:20]]) + " ... " +
                 ", ".join(
-                    [str(s) for s in self.shuffled_list[len(self.shuffled_list) - 20:len(self.shuffled_list) - 1]]
+                    [str(s) for s in shuffled_list[len(shuffled_list) - 20:len(shuffled_list) - 1]]
                 )
             )
 
-    def test_quicksort(self):
-        self.sort_algorithm_name = "Quicksort"
-        quicksort.quicksort(self.shuffled_list)
+        print("")
 
-    def test_mergesort(self):
-        self.sort_algorithm_name = "Mergesort"
-        self.shuffled_list = mergesort.mergesort(self.shuffled_list)
+    @staticmethod
+    def test_quicksort():
+        sorted_list, shuffled_list = SortTests.set_up_unit_test()
+        quicksort.quicksort(shuffled_list)
+        SortTests.tear_down_unit_test("Quicksort", sorted_list, shuffled_list)
+
+    @staticmethod
+    def test_mergesort():
+        sorted_list, shuffled_list = SortTests.set_up_unit_test()
+        shuffled_list = mergesort.mergesort(shuffled_list)
+        SortTests.tear_down_unit_test("Mergesort", sorted_list, shuffled_list)
+
+    @staticmethod
+    def test_selectionsort():
+        sorted_list, shuffled_list = SortTests.set_up_unit_test()
+        shuffled_list = selectionsort.selectionsort(shuffled_list)
+        SortTests.tear_down_unit_test("Selectionsort", sorted_list, shuffled_list)
+
+    @staticmethod
+    def test_bubblesort():
+        sorted_list, shuffled_list = SortTests.set_up_unit_test()
+        shuffled_list = bubblesort.bubblesort(shuffled_list)
+        SortTests.tear_down_unit_test("Bubblesort", sorted_list, shuffled_list)
