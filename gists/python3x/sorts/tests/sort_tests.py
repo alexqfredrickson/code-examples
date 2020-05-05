@@ -1,6 +1,6 @@
 import random
 import unittest
-from .. import quicksort, mergesort, selectionsort, bubblesort, insertionsort
+from gists.python3x.sorts import bubblesort, quicksort, mergesort, selectionsort, insertionsort
 
 
 class SortTests(unittest.TestCase):
