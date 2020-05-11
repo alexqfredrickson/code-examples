@@ -22,9 +22,21 @@ class BinaryTree:
             right_child=BinaryTree.from_list(arr, 2 * index + 2) if 2 * index + 2 < len(arr) else None
         )
 
+    def to_list(self, arr=None):
+
+        if not arr:
+            arr = []
+
+        arr.append(self)
+
+        if self.left_child:
+            arr + self.left_child.to_list(arr)
+
+        if self.right_child:
+            arr + self.right_child.to_list(arr)
+
+        return arr
+
     @property
     def is_leaf(self):
         return not self.left_child and not self.right_child
-
-
-
