@@ -1,6 +1,3 @@
 # code-examples
 
-Just some code examples and proof-of-concepts.
-
-* Various POCs are located under `pocs/`.
-* Code examples/exercises are located under `exercises/`.
+This project is a giant blob of random code examples, proof-of-concepts, and solutions to puzzles - spanning C#, Python, Go, AngularJS, .NET Web API 2, and .NET Core - in no particular format.
