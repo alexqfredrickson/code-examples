@@ -1,8 +1,6 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 func quick_sort(slice []int) []int {
 	if len(slice) == 0 {
@@ -55,8 +53,25 @@ func radix_sort() {
 	// todo
 }
 
-func bubble_sort() {
-	// todo
+func bubble_sort(slice []int) []int {
+	for {
+		is_sorted := true
+
+		for i := 0; i < len(slice)-1; i++ {
+			if slice[i] > slice[i+1] {
+				temp := slice[i+1]
+				slice[i+1] = slice[i]
+				slice[i] = temp
+				is_sorted = false
+			}
+		}
+
+		if is_sorted {
+			break
+		}
+	}
+
+	return slice
 }
 
 func selection_sort() {
@@ -83,7 +98,7 @@ func main() {
 	// fmt.Println(heap_sort(a))
 	// fmt.Println(counting_sort(a))
 	// fmt.Println(radix_sort(a))
-	// fmt.Println(bubble_sort(a))
+	fmt.Println(bubble_sort(a))
 	// fmt.Println(selection_sort(a))
 	// fmt.Println(insertion_sort(a))
 	// fmt.Println(shell_sort(a))
