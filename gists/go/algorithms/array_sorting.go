@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 // avg: O(n log(n))
 func quick_sort(slice []int) []int {
 
@@ -39,8 +37,51 @@ func quick_sort(slice []int) []int {
 	return append(new_slice, quick_sort(bigger_numbers)...)
 }
 
-func merge_sort() {
-	// todo
+// avg: O(n log(n))
+func merge_sort(slice []int) []int {
+
+	if len(slice) == 1 {
+		return slice
+	}
+
+	var sorted_slice []int
+	var left_slice []int
+	var right_slice []int
+	var i int = 0
+	var j int = 0
+	var k int = 0
+
+	middle_index := int(float64(len(slice) / 2))
+	left_slice = merge_sort(slice[0:middle_index])
+	right_slice = merge_sort(slice[middle_index:len(slice)])
+
+	for i < len(left_slice) && j < len(right_slice) {
+		if left_slice[i] <= right_slice[j] {
+			sorted_slice = append(sorted_slice, left_slice[i])
+			// fmt.Println(slice[i], slice[j], slice[i])
+			i++
+		} else {
+			sorted_slice = append(sorted_slice, right_slice[j])
+			// fmt.Println(slice[i], slice[j], slice[j])
+			j++
+		}
+	}
+
+	for k < len(slice) {
+		if i < len(left_slice) {
+			sorted_slice = append(sorted_slice, left_slice[i])
+			i++
+		}
+
+		if j < len(right_slice) {
+			sorted_slice = append(sorted_slice, right_slice[j])
+			j++
+		}
+
+		k++
+	}
+
+	return sorted_slice
 }
 
 func heap_sort() {
@@ -96,12 +137,12 @@ func bucket_sort() {
 func main() {
 	a := []int{15, 12, 9, 8, 3, 1, 2, 4, 6, 5, 11, 7, 10, 13, 14}
 
-	fmt.Println(quick_sort(a))
+	// fmt.Println(quick_sort(a))
 	// fmt.Println(merge_sort(a))
 	// fmt.Println(heap_sort(a))
 	// fmt.Println(counting_sort(a))
 	// fmt.Println(radix_sort(a))
-	fmt.Println(bubble_sort(a))
+	// fmt.Println(bubble_sort(a))
 	// fmt.Println(selection_sort(a))
 	// fmt.Println(insertion_sort(a))
 	// fmt.Println(shell_sort(a))
