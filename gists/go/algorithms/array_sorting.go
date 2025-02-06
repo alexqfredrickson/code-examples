@@ -2,7 +2,9 @@ package main
 
 import "fmt"
 
+// avg: O(n log(n))
 func quick_sort(slice []int) []int {
+
 	if len(slice) == 0 {
 		return nil
 	}
@@ -53,6 +55,7 @@ func radix_sort() {
 	// todo
 }
 
+// avg: O(n^2)
 func bubble_sort(slice []int) []int {
 	for {
 		is_sorted := true
